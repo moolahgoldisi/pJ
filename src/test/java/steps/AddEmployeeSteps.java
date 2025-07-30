@@ -178,11 +178,17 @@ public class AddEmployeeSteps extends CommonMethods {
             @Then("user is able to see error message for empty firstname and lastname")
             public void user_is_able_to_see_error_message_for_empty_firstname_and_lastname() {
                 String errorText = driver.findElement(By.xpath("//span[@for='firstName']")).getText();
+
                 //String errorText = driver.findElement(By.id("spanMessage")).getText();
                 String errorTextLastName = driver.findElement(By.xpath("//span[@for='lastName']")).getText();
+                System.out.println("Error message for first name: " +  errorText);
+                System.out.println("Error message for last name: " + errorTextLastName);
+//adding assertions to verify the error messages
+                assert errorText.equals("Required");
+                assert errorTextLastName.equals("Required");
 
 
-                System.out.println("Error message: " + errorText);
+
             }
 
         }
