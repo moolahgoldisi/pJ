@@ -51,3 +51,9 @@ Feature: Add employee
             @excel
             Scenario: adding employees using excel file
               When user adds multiple employees from excel file
+
+@empty
+              Scenario:Adding empty firstname and lastname employee
+                When user enters empty firstname and lastname
+                And user clicks on save button
+                Then user is able to see error message for empty firstname and lastname

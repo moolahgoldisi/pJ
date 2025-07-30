@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         glue = "steps",
 
         dryRun= false,
-        tags = "@error",
+        tags = "@empty",
         plugin ={"pretty", "html:target/cucumber.html","json:target/cucumber.json" }
 
 )
