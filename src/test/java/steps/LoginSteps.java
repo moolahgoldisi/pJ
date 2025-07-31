@@ -40,6 +40,7 @@ public class LoginSteps extends CommonMethods {
         //passwordField.sendKeys("Hum@nhrm123");
         sendText(ConfigReader.read("password"), loginPage.passwordField);
 
+
     }
 
     @When("user clicks on login button")
@@ -47,6 +48,9 @@ public class LoginSteps extends CommonMethods {
         WebElement loginButton = driver.findElement(By.id("btnLogin"));
         //loginButton.click();
         click(loginPage.loginButton);
+
+
+
 
     }
 
@@ -87,8 +91,12 @@ public class LoginSteps extends CommonMethods {
         //WebElement errorMessage = driver.findElement(By.id("spanMessage"));
         //String errorText = errorMessage.getText();
         String errorText = driver.findElement(By.id("spanMessage")).getText();
+
         System.out.println("Error message: " + errorText);
         //System.out.println("Steps will be implemented later");
+        // Adding assertion to verify the error message
+        assert errorText.equals("Invalid credentials");
+
     }
 
     @When("user leaves username and password empty")
